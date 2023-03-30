@@ -3,7 +3,11 @@ const verCarrito = document.getElementById("verCarrito");
 const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 
+//------CARRITO-------//
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+//------PRODUCTOS-------//
 
 productos.forEach((product) => {
     let content = document.createElement("div");
@@ -48,13 +52,13 @@ productos.forEach((product) => {
     })
 })
 
-//-----LOCAL STORAGE------//
+//-----SAVE LOCAL------//
 
 const saveLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-//------CARRITO-------//
+//------PINTAR CARRITO-------//
 
 const pintarCarrito = () => {
     modalContainer.innerHTML = "";
@@ -130,6 +134,8 @@ const pintarCarrito = () => {
 
 verCarrito.addEventListener("click", pintarCarrito);
 
+//------ELIMINAR PRODUCTO-------//
+
 const eliminarProducto = () => {
     const foundId = carrito.find((element) => element.id);
 
@@ -140,6 +146,8 @@ const eliminarProducto = () => {
     saveLocal();
     pintarCarrito();
 };
+
+//------CONTADOR DE ELEMENTOS-------//
 
 const carritoCounter = () => {
     cantidadCarrito.style.display = "block"

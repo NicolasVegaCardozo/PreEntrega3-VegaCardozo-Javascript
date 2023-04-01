@@ -142,6 +142,7 @@ body {
     background-color: #121212;
     color: #fff;
     width: 100%;
+    padding: 10%;
 }
 
 .modal-header-title {
@@ -202,6 +203,7 @@ body {
 
 .finalizar-btn {
     padding: 1%;
+    background-color: aquamarine;
 }
 
 #finalizarCompraBtn {

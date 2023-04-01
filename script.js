@@ -145,6 +145,7 @@ const pintarCarrito = () => {
 
 
         finalizarCompraBtn.addEventListener("click", () => {
+            finalizarCompraBtn.disabled = true;
             const formulario = document.createElement("form");
             formulario.className = "formulario";
             formulario.innerHTML = `
@@ -172,9 +173,17 @@ const pintarCarrito = () => {
 
             formulario.addEventListener("submit", (event) => {
                 event.preventDefault();
-                if (validarFormulario())
-                    Swal.fire("¡Muchas gracias por su compra!", "¡El correo con el resumen de compra ha sido enviado exitosamente!" ,"success"
+                if (validarFormulario()) {
+                    Swal.fire("¡Muchas gracias por su compra!", "¡El correo con el resumen de compra ha sido enviado exitosamente!", "success"
                     );
+                    modalContainer.style.display = "none";
+                    carrito = [];
+                    saveLocal();
+                    pintarCarrito();
+                    document.getElementById("cantidadCarrito").textContent = 0;
+                } else {
+                    Swal.fire("Error", "Por favor, completa todos los campos del formulario", "error");
+                }
             });
 
             modalContainer.append(formulario);

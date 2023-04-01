@@ -200,3 +200,10 @@ body {
     cursor: pointer;
 }
 
+.finalizar-btn {
+    padding: 1%;
+}
+
+#finalizarCompraBtn {
+    display: none;
+}

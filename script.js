@@ -66,13 +66,15 @@ const pintarCarrito = () => {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header"
     modalHeader.innerHTML = `
-        <h1 class="modal-header-title">Carrito.</h1>
+        <h1 class="modal-header-title p-4">Carrito</h1>
     `;
     modalContainer.append(modalHeader);
 
 
     const modalButton = document.createElement("h1");
-    modalButton.innerText = "x";
+    modalButton.innerHTML = `
+    <h2 class="modal-header-button p-4">X</h2>
+`;;
     modalButton.className = "modal-header-button";
 
     modalButton.addEventListener("click", () => {
@@ -128,7 +130,8 @@ const pintarCarrito = () => {
 
     const totalBuying = document.createElement("div")
     totalBuying.className = "total-content"
-    totalBuying.innerHTML = `total a pagar: $ ${total}`
+    totalBuying.innerHTML = `Total a pagar: $ ${total}`
+
     modalContainer.append(totalBuying);
 };
 
@@ -160,14 +163,4 @@ const carritoCounter = () => {
 };
 
 carritoCounter();
-
-
-
-
-
-
-
-
-
-
 

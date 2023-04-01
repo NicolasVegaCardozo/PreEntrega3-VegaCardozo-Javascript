@@ -1,9 +1,17 @@
-body {
-    margin: 0px;
+/*----- General -----*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+body {
+    margin: 0;
+}
 
-/*-----Navbar------*/
+/*----- Navbar -----*/
 
 .nav-container {
     position: sticky;
@@ -14,34 +22,31 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 12vh;
     background-color: #1b1b1b;
 }
 
 .navbar-logo {
-    justify-content: start;
     margin-left: 20px;
     color: #fff;
-    margin-top: 4vh;
     cursor: pointer;
 }
 
 .ver-carrito {
     font-size: 25px;
     margin-right: 20px;
-    margin-top: 3.5vh;
     cursor: pointer;
 }
 
-
-/*-----Banner styles------*/
+/*----- Banner styles -----*/
 
 .banner {
     background-size: cover;
     background-position: center;
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(img/portada.jpg);
+        url(img/portada.jpg);
 }
 
 .banner-container {
@@ -49,7 +54,7 @@ body {
     padding: 15% 0;
 }
 
-.banner h1{
+.banner h1 {
     margin: 0;
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -57,41 +62,40 @@ body {
     font-weight: bold;
 }
 
-.banner p{
+.banner p {
     font-size: 30px;
     color: #fff;
     opacity: 0.7;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-
-/*-----Product-Card-------*/
+/*----- Product-Card -----*/
 
 .shop-content {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
+    justify-content: center;
     margin-top: 30px;
-    margin-left: 80px;
-    margin-right: 80px;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 300px;
-    margin: auto;
+    width: 300px;
+    margin: 10px;
     text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 0.2s ease-in-out;
 }
 
-.card > img {
-    width: 90%;
+.card>img {
+    width: 100%;
     height: 250px;
+    object-fit: cover;
 }
 
 .price {
     color: red;
     font-size: 22px;
+    margin: 10px 0;
 }
 
 .card button {
@@ -104,13 +108,14 @@ body {
     cursor: pointer;
     width: 100%;
     font-size: 18px;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .card button:hover {
-    opacity: 0.7;
+    background-color: #2a2a2a;
 }
 
-/*----Modal content----*/
+/*----- Modal content -----*/
 
 .modal-container {
     width: 80%;
@@ -121,12 +126,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /*fot the top*/
     position: fixed;
     overflow: auto;
     z-index: 9;
     top: 12vh;
-    scrollbar-color: none;
 }
 
 .modal-container::-webkit-scrollbar {
@@ -149,7 +152,7 @@ body {
     cursor: pointer;
 }
 
-.modal-container > .modal-content {
+.modal-container>.modal-content {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -158,7 +161,7 @@ body {
     margin: 10px;
 }
 
-.modal-container > div > img {
+.modal-container>div>img {
     height: 120px;
     width: 120px;
 }
@@ -189,7 +192,6 @@ body {
     display: none;
 }
 
-
 .sumar {
     cursor: pointer;
 }
@@ -197,3 +199,4 @@ body {
 .restar {
     cursor: pointer;
 }
+
